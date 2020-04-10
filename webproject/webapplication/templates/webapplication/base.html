@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      {% block stylesheets %}
+        <!-- Bootstrap -->
+        <link href="/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- bootstrap-daterangepicker -->
+        <link href="/static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="/static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- bootstrap-progressbar -->
+        <link href="/static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="/static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+      {% endblock stylesheets %}
+      <link href="/static/build/css/custom.css" rel="stylesheet">
+
+    {% block header_extends %}{% endblock %}
+
+    <title>
+        {% block title %}
+    {% endblock %}
+    </title>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class = "col-md-3 left_col">
+
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/" class="site_title"><i class="fa fa-spinner"></i><span> IDA ICE Automation Tool</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+<!--                    sidebar menu-->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-home"></i>Home <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/">Summary</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-table"></i>Tables<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/">Summary</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i>Data Presentation<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a>Building 52<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu"><a href="/graphs/building52">Energy Consumption</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i>Request Simulation<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/functions/1">Add Floor</a></li>
+                                        <li><a href="/wwr">Window to Wall Ratio</a></li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--                    sidebar menu-->
+
+<!--                    top navigation-->
+            <div class="top_nav"  >
+                <div class="nav_menu">
+                    <div class="nav toggle" aria-expanded="false">
+                        <a id="menu_toggle" ><i class="fa fa-bars"></i></a>
+                    </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                          <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                              <img src="" alt="">
+                            </a>
+                          </li>
+                        </ul>
+
+
+
+
+
+                </div>
+            </div>
+<!--                    top navigation-->
+
+<!--                    page content-->
+            {% block content %}
+            {% endblock %}
+            <footer>
+                <div class="pull-right">
+                  Based on Python,Django,Bootstrap,AdminLTE,ColorlibHQ</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+
+
+        </div>
+    </div>
+
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--        <a class = "navbar-brand" href="/">Welcome to IDA ICE automation site</a>-->
+<!--         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">-->
+<!--            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--              <li class="nav-item active">-->
+<!--                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="/functions">Features</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="/functions/1/">Add Floor</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--    </nav>-->
+
+
+<!--    <div class = "main">-->
+
+<!--    </div>-->
+
+
+
+<!--jquery before bootstrap-->
+      {% block javascripts %}
+        <!-- jQuery -->
+        <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="/static/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="/static/vendors/nprogress/nprogress.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="/static/vendors/iCheck/icheck.min.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="/static/vendors/moment/min/moment.min.js"></script>
+        <script src="/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap-wysiwyg -->
+        <script src="/static/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="/static/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="/static/vendors/google-code-prettify/src/prettify.js"></script>
+        <!-- jQuery Tags Input -->
+        <script src="/static/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- Switchery -->
+        <script src="/static/vendors/switchery/dist/switchery.min.js"></script>
+        <!-- Select2 -->
+        <script src="/static/vendors/select2/dist/js/select2.full.min.js"></script>
+        <!-- Parsley -->
+        <script src="/static/vendors/parsleyjs/dist/parsley.min.js"></script>
+        <!-- Autosize -->
+        <script src="/static/vendors/autosize/dist/autosize.min.js"></script>
+        <!-- jQuery autocomplete -->
+        <script src="/static/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+        <!-- starrr -->
+        <script src="/static/vendors/starrr/dist/starrr.js"></script>
+      {% endblock %}
+        <script src="/static/build/js/custom.js"></script>
+</body>
+</html>

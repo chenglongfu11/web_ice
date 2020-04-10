@@ -2,24 +2,26 @@ import ctypes
 import json
 import time
 from win32 import win32process
-import sys
 import os
-import config
+from webproject.webapplication import config
 
 
 # path_to_ice = "D:\\Program Files (x86)\\ice48_Beta15(tmp)\\bin\\"
 # path_to_ice = "D:\\ida\\bin\\"
 # path_to_ice = "C:\\Program Files (x86)\\IDA\\bin\\"
-path_to_ice = config.APP_PATH
-command = path_to_ice + "ida-ice.exe \"" + path_to_ice + "ida.img\" -G 1"
-startObj = win32process.STARTUPINFO()
-ret = win32process.CreateProcess(None,command,None,None,0,0,None,None,startObj)
-pid = str(ret[2])
-# print(pid)
-time.sleep(5)
-#Add path_to_ice to PATH variable, is removed when program finishes
-os.environ['PATH'] = path_to_ice + os.pathsep + os.environ['PATH']
+def start():
+    path_to_ice = config.APP_PATH
+    command = path_to_ice + "ida-ice.exe \"" + path_to_ice + "ida.img\" -G 1"
+    startObj = win32process.STARTUPINFO()
+    ret = win32process.CreateProcess(None,command,None,None,0,0,None,None,startObj)
+    pid = str(ret[2])
+    # print(pid)
+    time.sleep(5)
+    #Add path_to_ice to PATH variable, is removed when program finishes
+    os.environ['PATH'] = path_to_ice + os.pathsep + os.environ['PATH']
+    return pid
 
+path_to_ice = config.APP_PATH
 ida_lib = ctypes.CDLL(path_to_ice + 'idaapi2.dll')
 
 

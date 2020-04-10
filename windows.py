@@ -1,5 +1,5 @@
 from util import *
-import inspect
+
 
 #show info of windows, walls, zones.
 # Script functions

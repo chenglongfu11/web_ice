@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'webapplication/style.css' %}">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <a href="/">
+            <h3>Welcome to IDA ICE automation site</h3>
+        </a>
+    </div>
+    <hr>
+<!--    | 为过滤器-->
+    <h2>Total {{all_list|length}} functions available</h2>
+    <ul>
+        {% for item in all_list %}
+
+        <li><a href = "{{item.id}}">{{item.choice_text}}</a></li>
+<!--        如果 for 为空的提示语句-->
+        {% empty %}}
+            <p>-- No functions available --</p>
+        {% endfor %}
+    </ul>
+
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+<!-- 通过url name 查找的形式找到链接       -->
+        <li><a href="{% url 'webapplication:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+</body>
+</html>
+
+
+<!--            <form action="" method="post">-->
+<!--                {% csrf_token %}-->
+<!--                {% if form %}-->
+<!--                <div class="form-group">-->
+<!--                    <div class="form-control">{{form}}</div>-->
+<!--                </div>-->
+<!--                {{form}}-->
+<!--                {% endif %}-->
+<!--                <div class="form-group">-->
+<!--                    <label for="nfloor">Number of floors you want: </label>-->
+<!--                    <input type = "number" class="form-control" id= "nfloor" name="nfloor" required=True min="1">-->
+<!--                </div>-->
+<!--            <div class="form-group">-->
+<!--                    <label for="cheight"> Ceiling height:</label>-->
+<!--                     <input type = "number" class="form-control" id="cheight" name = "cheight" required =True min="0">-->
+<!--            </div>-->
+<!--            <button id="submit" type="submit" class="btn btn-primary">Apply</button>-->
+<!--            </form>-->
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Consumption Electric cooling
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Consumption Equipment, Facility
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                  <table class="table table-responsive table-hover">
+                      <caption>Simulated buildings Summary</caption>
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Building Name</th>
+                          <th scope="col">Simulation option</th>
+                          <th scope="col">Simulation time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for simu in simulation %}
+                            <tr>
+                              <th scope="row">{{simu.id}}</th>
+                                {% for bn in building %}
+                                    {% if simu.bid == bn.id %}
+                                        <td>{{bn.building_name }}</td>
+                                    {% endif %}}
+                                {% endfor %}
+
+                              <td>{{simu.simulation_option}}</td>
+                              <td>{{simu.simu_time}}</td>
+                            </tr>
+                       {% empty %}
+                            <td colspan="3">No simulation info</td>
+                       {% endfor %}
+
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Consumption Distric how water
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+    </div>

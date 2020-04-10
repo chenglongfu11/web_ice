@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block header_extends %}
+    <link rel = "stylesheet" type="text/css" href ="{% static 'webapplication/style.css' %}">
+
+{% endblock %}
+
+{% block title %}
+IDA ICE automation
+{% endblock %}
+
+
+
+
+
+{% block content%}
+<!--    | 为过滤器-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+
+                <ul class="list-group" >
+                    {% for item in all_list %}
+                    <li class="list-group-item list-group-item-action" ><a class="list-link" href = "{{item.id}}">{{item.choice_text}}</a></li>
+            <!--        如果 for 为空的提示语句-->
+                    {% empty %}}
+                        <p>-- No functions available --</p>
+                    {% endfor %}
+                </ul>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Total</div>
+              <div class="card-body">
+<!--                <h5 class="card-title">Light card title</h5>-->
+                <p class="card-text">Total {{all_list|length}} functions available</p>
+              </div>
+            </div>
+            <h3></h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+<!-- 通过url name 查找的形式找到链接       -->
+        <li><a href="{% url 'webapplication:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+
+{% endblock %}}

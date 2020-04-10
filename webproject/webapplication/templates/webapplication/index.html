@@ -1,0 +1,106 @@
+{% extends 'webapplication/base.html' %}
+{% load static %}
+
+{% block title %}
+IDA ICE automation
+{% endblock %}
+
+{%block header_extends %}
+
+{% endblock %}
+
+
+{% block content%}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>IDA ICE Automation Tool</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+        <!-- 通过url name 查找的形式找到链接       -->
+                <li><a href="{% url 'webapplication:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h2>Total {{all_list|length}} functions available</h2>
+        <ul>
+            <li><a href="/functions/1/" class="list-link">Add more floors</a> </li>
+            <li><a href="/functions/2/" class="list-link">Add U value</a> </li>
+            <li><a href="/functions/3/" class="list-link">Run simulation</a> </li>
+            <li><a href="/functions/4/" class="list-link">Add AHU</a> </li>
+        </ul>
+
+        <div class="clearfix"></div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Summary of simulations</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <p class="text-muted font-13 m-b-30">
+                DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>
+              </p>
+              <table id="datatable" class="table table-striped table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Building Name</th>
+                    <th>Simulation option</th>
+                    <th>Simulation time</th>
+                  </tr>
+                </thead>
+
+
+                <tbody>
+                  {% for simu in simulation %}
+                  <tr>
+                    <td>{{ simu.id }}</td>
+                    {% for bn in building %}
+                      {% if simu.bid == bn.id %}
+                      <td>{{bn.building_name}}</td>
+                      {% endif %}
+                    {% endfor %}
+                    <td>{{simu.simulation_option}}</td>
+                    <td>{{simu.simu_time}}</td>
+                  </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}}
+

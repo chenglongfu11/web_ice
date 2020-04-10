@@ -1,5 +1,5 @@
 from util import *
-import  config
+from webproject.webapplication import config
 
 
 # print(building)
@@ -12,7 +12,7 @@ def show_buildinginfo(building):
 #Doing simulation
 def do_simulation(building):
     print("Now performing simulation...")
-    sim_res = call_ida_api_function(ida_lib.runSimulation, building, 2)
+    sim_res = call_ida_api_function(ida_lib.runSimulation, building, 1)
     print("the simulation result is " + str(sim_res))
     print("Simulation done...")
 
@@ -47,6 +47,6 @@ def main():
 
 
 
-#
-# if __name__ == "__main__":
-#     main()
+
+if __name__ == "__main__":
+    main()

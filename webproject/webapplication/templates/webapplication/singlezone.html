@@ -1,0 +1,295 @@
+{% extends 'webapplication/base.html' %}
+{% load static %}
+
+{% block title %}
+IDA ICE automation - Building 52
+{% endblock %}
+
+{%block header_extends %}
+
+{% endblock %}
+
+
+{% block content%}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Building 52 <small>Simulation results</small></h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2><i class="fa fa-align-left"></i> Consumption results</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <!-- start accordion -->
+              <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel">
+                  <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h4 class="panel-title">Consumption Sum</h4>
+                  </a>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                         <div id="echart_line_sum" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <h4 class="panel-title">Consumption Fuel Heating</h4>
+                  </a>
+                  <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <div id="echart_line_cfuel" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h4 class="panel-title">Consumption Domestic Hot Water</h4>
+                  </a>
+                  <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <div id="echart_line_chotwater" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading collapsed" role="tab" id="headingFour" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <h4 class="panel-title">Consumption HVAC</h4>
+                  </a>
+                  <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <div id="echart_line_chvac" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading collapsed" role="tab" id="headingFive" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <h4 class="panel-title">Consumption Equipment, Tenant</h4>
+                  </a>
+                  <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                    <div class="panel-body">
+                      <div id="echart_line_cequip" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading collapsed" role="tab" id="headingSix" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <h4 class="panel-title">Consumption Lighting Facility</h4>
+                  </a>
+                  <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">
+                    <div class="panel-body">
+                      <div id="echart_line_clight" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <a class="panel-heading collapsed" role="tab" id="headingSeven" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    <h4 class="panel-title">Consumption Electric Cooling</h4>
+                  </a>
+                  <div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">
+                    <div class="panel-body">
+                      <div id="echart_line_celec" style="height:350px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of accordion -->
+            </div>
+          </div>
+        </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Power Power report</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <div id="mainx" style="height:350px;"></div>
+
+            </div>
+          </div>
+        </div>
+
+
+            </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+  {{ block.super }}
+  <!-- ECharts -->
+  <script src="/static/vendors/echarts/dist/echarts.min.js"></script>
+  <script src="/static/vendors/echarts/map/js/world.js"></script>
+  <script src="/static/build/js/custom.js"></script>
+
+  <script type="text/javascript">
+
+      var echartids = ['echart_line_sum','echart_line_celec','echart_line_cfuel','echart_line_chotwater',
+              'echart_line_chvac','echart_line_cequip','echart_line_clight'];
+      var jListids = ['{{cSum | safe}}','{{cElec | safe}}','{{cFuel | safe}}','{{cHotWater | safe}}',
+              '{{cHvac | safe}}','{{cEquip | safe}}','{{cLight | safe}}'];
+      var names =['Sum of All','Electric Cooling','Fuel Heating','Domestic Hot Water','HVAC','Equipment, Tenant',
+                  'Lighting Facility'];
+
+      var jList='{{cElec |safe }}';
+      var jList2 ='{{cSum | safe }}';
+      console.log('cElec',jList);
+      console.log('Sum',jList2);
+
+      //           for(var x=0;x<echartids.length;x++) {
+      //                   var echartLine = echarts.init(document.getElementById(echartids[x]),theme);
+      //                   console.log(echartids[x]);
+      //                         // Get JSON object from backend
+      //                   var jList = res['cSum']
+      //                   console.log('Received', jList);
+      //                   jList = JSON.parse(jList);
+      //                   console.log('Parsed',jList);
+      //
+      //                   // One array list to store data, the other to store legends
+      //                   var objList = new Array();
+      //                   var nameList = new Array();
+      //                   for (var i = 0; i < jList.length; i++) {
+      //                     // The structure follows Echarts API
+      //                     var obj1 = {
+      //                       name: jList[i].name, type: 'line', smooth: true, itemStyle: {normal: {areaStyle: {type: 'default'}}},
+      //                       data: jList[i].value
+      //                     };
+      //                     nameList.push(jList[i].name);
+      //                     objList.push(obj1);
+      //                   }
+      //                   echartLine.setOption({
+      //                     title: {text: names[x],},
+      //                     tooltip: {trigger: 'axis'},
+      //                     legend: {x: 220,  y: 40, data: nameList},
+      //                     toolbox: {show: true, feature:
+      //                               { magicType: { show: true, title: { line: 'Line', bar: 'Bar', stack: 'Stack', tiled: 'Tiled'},
+      //                           type: ['line', 'bar', 'stack', 'tiled']},
+      //                         restore: {show: true,  title: "Restore"},
+      //                         saveAsImage: {show: true,  title: "Save Image"}}
+      //                     },
+      //                     calculable: true,
+      //                     xAxis: [{
+      //                       type: 'category',
+      //                       boundaryGap: false,
+      //                       // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      //                       data: ['Month1', 'Month2', 'Month3', 'Month4', 'Month5', 'Month6', 'Month7', 'Month8', 'Month9', 'Month10', 'Month11', 'Month12']
+      //                     }],
+      //                     yAxis: [{ type: 'value'}],
+      //                     // Data array is used here
+      //                     series: objList});
+
+
+
+
+
+      //Power bar graph
+    if ($('#mainx').length) {
+
+        var echartBar = echarts.init(document.getElementById('mainx'),theme);
+        var seriesData = new Array();
+        var jList = '{{power_values | safe }}';
+        var legendList = '{{power_legends | safe }}';
+        jList = JSON.parse(jList);
+        legendList = JSON.parse(legendList);
+        var seriesList = new Array();
+
+        for ( var i=0; i<jList.length;i++) {
+          var obj1 = {
+            name: legendList[i], type: 'bar', data: jList[i],
+            marPoint: {
+              data: [{type: 'max', nmae: 'max'}, {type: 'average', name: 'average'},
+                {type: 'min', name: 'min'}, {type: 'sum', name: 'sum'}]
+            }
+          };
+          seriesList.push(obj1);
+        }
+
+
+
+        echartBar.setOption({
+            title: {
+                text: '',
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: legendList
+            },
+            toolbox: {
+                show: false
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                data: ['Electric Cooling','Equipment, Tenant','Lighting Facility','Fuel Heating','Domestic Hot Water','HVAC',
+                  'Sum of All']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: seriesList,
+        });
+
+    }
+
+
+
+
+
+
+
+    </script>
+
+{% endblock javascripts %}

@@ -1,5 +1,5 @@
 from util import *
-import config
+from webproject.webapplication import config
 
 
 def cloneAHU(building, new_ahu_name):
