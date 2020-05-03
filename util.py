@@ -3,7 +3,7 @@ import json
 import time
 from win32 import win32process
 import os
-from webproject.webapplication import config
+import config
 
 
 # path_to_ice = "D:\\Program Files (x86)\\ice48_Beta15(tmp)\\bin\\"
