@@ -2,29 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f31fcc2-5f90-4e04-8425-5249dbd2253d" name="Default Changelist" comment="initddd">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/f9511.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled1-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/basic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildings/ut1.idm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildings/ut1_7floor.idm" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/.ipynb_checkpoints/Scripting_test-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/Scripting_test.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/util.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/config.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/test_building3.idm" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_clone.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_strcs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_strcs/door_strc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_strcs/therm_bdg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_strcs/win_strc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zone_strcs/zone_strc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doors.py" beforeDir="false" afterPath="$PROJECT_DIR$/runScript.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/floor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tosend/floor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/showList.py" beforeDir="false" afterPath="$PROJECT_DIR$/tosend/showList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/tosend/windows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +50,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="chenglongfu11 &lt;52843255+chenglongfu11@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -114,11 +107,11 @@
       <recent name="https://github.com/ColorlibHQ/gentelella.git" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\untitled\buildings" />
       <recent name="D:\untitled\zone_strcs" />
       <recent name="D:\untitled\webproject\webapplication\templates\webapplication" />
       <recent name="D:\untitled\webproject\webapplication\static\css" />
       <recent name="D:\untitled\webproject\webapplication\static\js" />
-      <recent name="D:\untitled\webproject\webapplication\static" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\untitled\tosend" />
@@ -382,7 +375,7 @@
       <workItem from="1586512334737" duration="17000" />
       <workItem from="1588155350309" duration="4681000" />
       <workItem from="1588268307485" duration="1899000" />
-      <workItem from="1588317773145" duration="35686000" />
+      <workItem from="1588317773145" duration="36287000" />
     </task>
     <task id="LOCAL-00001" summary="initddd">
       <created>1582819823380</created>
@@ -391,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582819823381</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="function1: zone clone; function2: add windows and doors into each zone.">
+      <created>1588516642206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588516642206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +423,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initddd" />
-    <option name="LAST_COMMIT_MESSAGE" value="initddd" />
+    <MESSAGE value="function1: zone clone; function2: add windows and doors into each zone." />
+    <option name="LAST_COMMIT_MESSAGE" value="function1: zone clone; function2: add windows and doors into each zone." />
   </component>
   <component name="WindowStateProjectService">
     <state x="261" y="0" key="#Inspections" timestamp="1586419870075">
@@ -442,10 +443,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586510109787" />
-    <state x="326" y="0" key="CommitChangelistDialog2" timestamp="1586511430046">
+    <state x="326" y="0" key="CommitChangelistDialog2" timestamp="1588516640396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="326" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586511430046" />
+    <state x="326" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588516640396" />
     <state x="675" y="112" key="FileChooserDialogImpl" timestamp="1586512348313">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -502,10 +503,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="281" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586511558222" />
-    <state x="261" y="82" key="Vcs.Push.Dialog.v2" timestamp="1586512112742">
+    <state x="261" y="82" key="Vcs.Push.Dialog.v2" timestamp="1588516851879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="82" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586512112742" />
+    <state x="261" y="82" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588516851879" />
     <state x="591" y="250" key="git4idea.rebase.GitRebaseDialog" timestamp="1586511465462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
