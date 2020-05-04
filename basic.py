@@ -9,7 +9,8 @@ from collections import defaultdict
 """
 
 
-def connectIDA(bld_choice = 0):
+
+def connectIDA():
     """
     :param: config.BUILDING_PATH list
     :return: building:object
@@ -17,9 +18,8 @@ def connectIDA(bld_choice = 0):
     # Connecting to the IDA ICE API.
     pid = start()
     test = ida_lib.connect_to_ida(b"5945", pid.encode())
-
     # Open a saved building
-    building = call_ida_api_function(ida_lib.openDocument, config.BUILDING_PATH[bld_choice])
+    building = call_ida_api_function(ida_lib.openDocument, config.BUILDING_PATH)
     return building
 
 

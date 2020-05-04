@@ -1,8 +1,8 @@
 from util import *
 import config
-from zone_strcs import win_strc, therm_bdg, door_strc
-import zone_clone
-from zone_strcs import zone_strc
+from zonestructure import winstrc, thermbdg, doorstrc
+import zoneclone
+from zonestructure import zonestrc
 from basic import *
 
 
@@ -20,8 +20,9 @@ class RunScript:
         scriptList.append(heading)
 
         for i in range(num_zone):
-            zone_name = 'Zone ' + str(i + 1)
-            zoneScrip = zone_strc.zone_strc(wins, doors, zone_name)
+            zone_name1 = 'Zone ' + str(i + 1)
+            _zoneStrc = zonestrc.ZoneStrc()
+            zoneScrip = _zoneStrc.zone_strc(wins, doors, zone_name1)
             scriptList.append(zoneScrip)
 
         scriptList.append(endnote)
@@ -108,8 +109,6 @@ class RunScript:
 class TestRunScript:
 
     def testScriptGene(self, ceiling_ht, wall_width):
-        _run = RunScript()
-
         # allocate doors' parameters
         doors = []
         door = {}
@@ -132,12 +131,32 @@ class TestRunScript:
                 win['win_dy'] = '1.2'
                 wins.append(win)
 
+        _run = RunScript()
         generated = _run.generate_script(wins, doors)
         print(generated)
 
+    def testGene2(self):
+        wins =[]
+        win2 = {}
+        win2['w_wall_name'] = 'WALL_13'
+        win2['win_x'] = '26.015'
+        win2['win_y'] = '0.8'
+        win2['win_dx'] = '3'
+        win2['win_dy'] = '1.8'
+        win2['detailed'] = 1  # true 1   false 0
+        win2['glazing'] = 1
+        wins.append(win2)
+        doors=[]
+
+        _run = RunScript()
+        generated = _run.generate_script(wins, doors)
+        print(generated)
+
+
+
     def testZoneCloneAND_DW(self, ceiling_ht, wall_width):
         _run = RunScript()
-        zoneClone = zone_clone.ZoneClone()
+        zoneClone = zoneclone.ZoneClone()
 
         # Clone zones
         building = connectIDA()
@@ -252,6 +271,7 @@ if __name__ == "__main__":
 
     _test = TestRunScript()
     # test1.sw1_dw1_d1(2.6)
-    _test.testZoneCloneAND_DW(_ceiling_ht, wall_width_list)
+    # _test.testZoneCloneAND_DW(_ceiling_ht, wall_width_list)
     # test1.windowtwo(3)
     # _test.testScriptGene(_ceiling_ht, wall_width_list)
+    _test.testGene2()
