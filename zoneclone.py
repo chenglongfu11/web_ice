@@ -38,6 +38,8 @@ class ZoneClone:
             print("Fail to change ceiling height for %s" % name)
             return False
 
+
+
     def clone_zone(self, building, ceiling_ht, num_floor):
         """
         Clone zone: known building, ceiling_ht, num_floor, we can clone zones
@@ -63,13 +65,13 @@ class ZoneClone:
                     geometry = ida_get_named_child(cloned_zone, "GEOMETRY")
                     floor_ht_fr = ida_get_named_child(geometry, "FLOOR_HEIGHT_FROM_GROUND")
                     fl_val = ida_get_value(floor_ht_fr)  # Original floor height from ground
-
                     # Algorithm: floor height from ground = ceiling ht * floor
                     # e.g floor 1: 0m; floor 3: ceiling_ht*2 m
                     text_to_send = "{\"type\":\"number\",\"value\":" + "{0:.1f}".format(ceiling_ht * (j + 1)) + "}"
                     res_h_l = call_ida_api_function(ida_lib.setAttribute, b"VALUE", floor_ht_fr, text_to_send.encode())
                     print(res_h_l)
                     results.append(res_h_l)
+                    new_file_name = ida_get_name(building) + '_' + str(num_floor) + 'floor'
 
         else:
             for i, val in enumerate(zones):
@@ -90,14 +92,17 @@ class ZoneClone:
                                                         text_to_send.encode())
                         print(res_h_l)
                         results.append(res_h_l)
+                        new_file_name = ida_get_name(building) + '_' + str(num_floor) + 'floor'
 
         # Check results
         for ele in results:
             if not ele:
-                return False
+                return False, new_file_name
             else:
-                return True
+                return True, new_file_name
 
+
+    # Edit building height
     def edit_bld_ht(self, building, height, body_name="Floor_36"):
         """
          Edit building height
@@ -125,7 +130,7 @@ class ZoneClone:
             print("Error in changing building height")
             return False
 
-
+    # Building current height
     def bld_cur_ht(self, building, body_name="Floor_36"):
         building_body = ida_get_named_child(building, body_name)  # Building body object
         bld_ht = basic.showSingleChild(building_body, "HEIGHT")  # building body height object
@@ -144,7 +149,7 @@ class ZoneClone:
         """
 
         # Calculate num of floor
-        cur_ht = self.bld_cur_ht(building, body_name)
+        cur_ht = self.bld_cur_ht(building, body_name)         # Get current height of the building
         num_floor = int(cur_ht / ceiling_ht)
 
         res = self.clone_zone(building, ceiling_ht, num_floor)

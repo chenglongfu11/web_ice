@@ -114,8 +114,6 @@ ida_lib.printReport.restype = ctypes.c_long
 ida_lib.printReport.argtypes = [ctypes.c_long, ctypes.c_char_p, ctypes.c_long, ctypes.c_char_p, ctypes.c_int]
 
 
-
-
 #Utility functions
 
 def ida_poll_results_queue (time_interval):
@@ -200,5 +198,19 @@ def ida_checkerr():
 
 def ida_checkstatus():
   p = ctypes.create_string_buffer(5000)
-  status = ida_lib.getIDAStatus(p, len(p))
-  print("the IDA status is " +p.value.decode("utf-8"))
+
+  while True:
+    status = ida_lib.getIDAStatus(p, len(p))
+    try:
+      poll_result2 = json.loads(p.value.decode("utf-8"))
+      break
+    except:
+      time.sleep(1)
+      continue
+
+
+  poll_result2 = json.loads(p.value.decode("utf-8"))
+  poll_result = False
+  if isinstance(poll_result2, list):
+       poll_result = poll_result2[0]['value']
+  return poll_result

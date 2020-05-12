@@ -1,0 +1,5 @@
+﻿wall_name,door_x,door_y,door_dx,door_dy,construction,schedule,ela
+WALL_6,3.21,,,,1,2,0.03
+WALL_18,2,0,4,2,2,1,0.05
+WALL_3,1,0,,,4,2,0.5
+WALL_3,9,,,2.1,3,2,1

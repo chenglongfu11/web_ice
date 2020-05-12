@@ -4,36 +4,58 @@ from zonestructure import winstrc, thermbdg, doorstrc
 import zoneclone
 from zonestructure import zonestrc
 from basic import *
+import schedulestrc
 
 
 class RunScript:
+    #TODO
+    def manage_csv(self, csv_path):
+        pass
 
     def apply_script(self, building, script):
-        res = call_ida_api_function(ida_lib.runIDAScript, building, script.encode())
-        print(res)
+        res = call_ida_api_function_j(ida_lib.runIDAScript, building, script.encode())
+        print('Apply_script message: ',res)
         return res
 
     # Aggregated scripting generator    wins each floor, doors each floor
-    def generate_script(self, wins, doors, num_zone=1):
+    def generate_script(self, wins, doors, num_zone=1, add=True):
         scriptList = []
         heading, endnote = self.script_bsc()
         scriptList.append(heading)
 
+        # # schedule structure
+        # existing_shd = []
+        # if len(wins) ==0 and len(doors) == 0:
+        #     for win in wins:
+        #         if 'schedule' in win.keys():
+        #             shd = win['schedule']
+        #             exist = False
+        #             for e_shd in existing_shd:
+        #                 if shd == e_shd:
+        #                     exist = True
+        #
+        #             if not exist:
+        #                 shd_ls, nm = schedulestrc.schedule_rule(shd)
+        #                 scriptList.append(shd_ls)
+
+        #TODO zone structure
         for i in range(num_zone):
             zone_name1 = 'Zone ' + str(i + 1)
             _zoneStrc = zonestrc.ZoneStrc()
-            zoneScrip = _zoneStrc.zone_strc(wins, doors, zone_name1)
+            zoneScrip = _zoneStrc.zone_strc(wins, doors, zone_name1, add)
             scriptList.append(zoneScrip)
 
         scriptList.append(endnote)
         ressss = ' '.join(scriptList)
-        print(ressss)
+        print('Generated script: ',ressss)
         return ressss
 
     def script_bsc(self):
         script_heading = '(:UPDATE [@] '
         script_endnote = ')'
         return script_heading, script_endnote
+
+
 
     # """subfunction
     #         ( (CE-ZONE :N "Zone 1")
@@ -105,173 +127,3 @@ class RunScript:
     #     return re
 
 
-# Unit test
-class TestRunScript:
-
-    def testScriptGene(self, ceiling_ht, wall_width):
-        # allocate doors' parameters
-        doors = []
-        door = {}
-        door['d_wall_name'] = 'WALL_6'
-        door['door_x'] = '3.21'
-        doors.append(door)
-
-        # allocate wins' parameters, on each wall with proper size, add a window
-        wins = []
-        win_dx = 1.5
-        win_dy = 1.2
-        for i in range(len(wall_width)):
-            width = wall_width[i]
-            if width > win_dx + 2 and ceiling_ht > win_dy:  # to make sure it is in the zone
-                win = {}
-                win['w_wall_name'] = 'WALL_' + str(i + 1)
-                win['win_x'] = str(width / 2 - win_dx / 2)
-                win['win_y'] = '0.8'
-                win['win_dx'] = '1.5'
-                win['win_dy'] = '1.2'
-                wins.append(win)
-
-        _run = RunScript()
-        generated = _run.generate_script(wins, doors)
-        print(generated)
-
-    def testGene2(self):
-        wins =[]
-        win2 = {}
-        win2['w_wall_name'] = 'WALL_13'
-        win2['win_x'] = '26.015'
-        win2['win_y'] = '0.8'
-        win2['win_dx'] = '3'
-        win2['win_dy'] = '1.8'
-        win2['detailed'] = 1  # true 1   false 0
-        win2['glazing'] = 1
-        wins.append(win2)
-        doors=[]
-
-        _run = RunScript()
-        generated = _run.generate_script(wins, doors)
-        print(generated)
-
-
-
-    def testZoneCloneAND_DW(self, ceiling_ht, wall_width):
-        _run = RunScript()
-        zoneClone = zoneclone.ZoneClone()
-
-        # Clone zones
-        building = connectIDA()
-        nfloor = zoneClone.clone_zones_pro(building, ceiling_ht, "Floor_36")
-        nfloor = int(nfloor)
-
-        # Add components to zones
-        wall_height = ceiling_ht
-        # wall_width_list = [4, 7.5, 11.63, 10.27, 18.07, 20.587, 6.543, 8.72, 6.5176, 4, 6.48, 2.59, 31, 4, 9.886, 8.554, 13.899, 11.15, 9.98]
-        doors = []
-        door = {}
-        door['d_wall_name'] = 'WALL_6'
-        door['door_x'] = '3.21'
-        doors.append(door)
-
-        wins = []
-        win_dx = 1.5
-        win_dy = 1.2
-        for i in range(len(wall_width)):
-            width = wall_width[i]
-            if width > win_dx + 2 and wall_height > win_dy:  # to make sure it is in the zone
-                win = {}
-                win['w_wall_name'] = 'WALL_' + str(i + 1)
-                win['win_x'] = str(width / 2 - win_dx / 2)
-                win['win_y'] = '0.8'
-                win['win_dx'] = '1.5'
-                win['win_dy'] = '1.2'
-                wins.append(win)
-
-        win2 = {}
-        win2['w_wall_name'] = 'WALL_13'
-        win2['win_x'] = '26.015'
-        win2['win_y'] = '0.8'
-        win2['win_dx'] = '3'
-        win2['win_dy'] = '1.8'
-        win2['detailed'] = 1  # true 1   false 0
-        win2['glazing'] = 1
-        wins.append(win2)
-
-        sc = _run.generate_script(wins, doors, nfloor)
-        _run.apply_script(building, sc)
-
-
-
-    def test_window2(self, ceiling_height):
-        wall_height = ceiling_height
-        wall_width = [11.63]
-        wins = []
-        doors = []
-        win_dx = 1.5
-        win_dy = 1.2
-
-        for i in range(len(wall_width)):
-            width = wall_width[i]
-            if width > win_dx + 2 and wall_height > win_dy:  # to make sure it is in the zone
-                win = {}
-                win['w_wall_name'] = 'WALL_' + str(i + 1)
-                win['win_x'] = str(width / 2 - win_dx / 2)
-                win['win_y'] = '0.8'
-                win['win_dx'] = '1.5'
-                win['win_dy'] = '1.2'
-                wins.append(win)
-
-        run1 = RunScript()
-        nfloor = 7
-        sc = run1.generate_script(wins, doors, nfloor)
-
-
-    def testApplyScript(self, ceiling_height, wall_width_list):
-        wall_height = ceiling_height
-        doors = []
-        door = {}
-        door['d_wall_name'] = 'WALL_6'
-        door['door_x'] = '3.21'
-        doors.append(door)
-
-        wins = []
-        win_dx = 1.5
-        win_dy = 1.2
-        for i in range(len(wall_width_list)):
-            width = wall_width_list[i]
-            if width > win_dx + 2 and wall_height > win_dy:  # to make sure it is in the zone
-                win = {}
-                win['w_wall_name'] = 'WALL_' + str(i + 1)
-                win['win_x'] = str(width / 2 - win_dx / 2)
-                win['win_y'] = '0.8'
-                win['win_dx'] = '1.5'
-                win['win_dy'] = '1.2'
-                wins.append(win)
-
-        win2 = {}
-        win2['w_wall_name'] = 'WALL_13'
-        win2['win_x'] = '26.015'
-        win2['win_y'] = '0.8'
-        win2['win_dx'] = '3'
-        win2['win_dy'] = '1.8'
-        win2['detailed'] = 1  # true 1   false 0
-        win2['glazing'] = 1
-        wins.append(win2)
-
-        run1 = RunScript()
-        sc = run1.generate_script(wins, doors)
-        building = connectIDA()
-        run1.apply_script(building, sc)
-        # run1.saveIDM("D:\\ide_mine\\changing\\ut1_3.idm",1)
-
-
-if __name__ == "__main__":
-    wall_width_list = [4, 7.5, 11.63, 10.27, 18.07, 20.587, 6.543, 8.72, 6.5176, 4, 6.48, 2.59, 31, 4, 9.886, 8.554,
-                       13.899, 11.15, 9.98]
-    _ceiling_ht = 3
-
-    _test = TestRunScript()
-    # test1.sw1_dw1_d1(2.6)
-    # _test.testZoneCloneAND_DW(_ceiling_ht, wall_width_list)
-    # test1.windowtwo(3)
-    # _test.testScriptGene(_ceiling_ht, wall_width_list)
-    _test.testGene2()
