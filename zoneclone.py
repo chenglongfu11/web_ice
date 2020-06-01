@@ -50,6 +50,7 @@ class ZoneClone:
         """
         zones = call_ida_api_function(ida_lib.getChildrenOfType, building, b"ZONE")
         results = []
+        new_file_name = ''
 
         # Single zone on each floor
         if len(zones) == 1:

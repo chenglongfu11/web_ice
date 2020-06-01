@@ -1,9 +1,7 @@
 import datetime
 import sys
 import traceback
-
 import pymysql
-
 import config
 
 

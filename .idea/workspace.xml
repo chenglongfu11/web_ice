@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f31fcc2-5f90-4e04-8425-5249dbd2253d" name="Default Changelist" comment="Add Main.ipynb">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Simulation&amp;Report-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/build_model-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulation&amp;Report.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build_model.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildings/doors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildings/windows.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildtest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dbhelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Main-V2-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main-V2.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/.ipynb_checkpoints/Main-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/.ipynb_checkpoints/MainV2-checkpoint.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/.ipynb_checkpoints/Scripting_test-checkpoint.ipynb" afterDir="false" />
@@ -20,36 +13,23 @@
       <change afterPath="$PROJECT_DIR$/ipub/Scripting_test.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/util.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ipub/util1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multiprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readhtml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report_output.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedulestrc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/config.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/floor.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/showList.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/test_building3.idm" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/util.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tosend/windows.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwrtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webproject/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webproject/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webproject/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Main-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Main-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ahu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ahu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/floor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_simu.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/runscript.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showList.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Simulation&amp;Report-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Simulation&amp;Report-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation&amp;Report.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation&amp;Report.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbhelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webproject/webproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webproject/webproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwr.py" beforeDir="false" afterPath="$PROJECT_DIR$/wwr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zoneclone.py" beforeDir="false" afterPath="$PROJECT_DIR$/zoneclone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zonestructure/doorstrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/zonestructure/doorstrc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zonestructure/winstrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/zonestructure/winstrc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zonestructure/zonestrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/zonestructure/zonestrc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +111,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ipub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../icepy" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -142,13 +122,6 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/ColorlibHQ/gentelella.git" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\untitled\ipub" />
-      <recent name="D:\untitled" />
-      <recent name="D:\untitled\tosend" />
-      <recent name="D:\untitled\webproject\webapplication\static" />
-      <recent name="D:\untitled\webproject\webapplication\static\vendors" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\untitled\buildings" />
       <recent name="D:\untitled\zone_strcs" />
@@ -156,9 +129,16 @@
       <recent name="D:\untitled\webproject\webapplication\static\css" />
       <recent name="D:\untitled\webproject\webapplication\static\js" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\untitled" />
+      <recent name="D:\untitled\ipub" />
+      <recent name="D:\untitled\tosend" />
+      <recent name="D:\untitled\webproject\webapplication\static" />
+      <recent name="D:\untitled\webproject\webapplication\static\vendors" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.simulation">
-    <configuration name="basic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.database">
+    <configuration name="database" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="untitled" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,7 +151,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -339,18 +319,18 @@
       <item itemvalue="Python.db" />
       <item itemvalue="Python.showList" />
       <item itemvalue="Python.wwrtest" />
-      <item itemvalue="Python.basic" />
       <item itemvalue="Python.readhtml" />
       <item itemvalue="Python.wwr" />
       <item itemvalue="Python.simulation" />
+      <item itemvalue="Python.database" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.database" />
         <item itemvalue="Python.simulation" />
         <item itemvalue="Python.readhtml" />
         <item itemvalue="Python.wwr" />
         <item itemvalue="Python.wwrtest" />
-        <item itemvalue="Python.basic" />
       </list>
     </recent_temporary>
   </component>
@@ -394,7 +374,11 @@
       <workItem from="1588755757563" duration="2199000" />
       <workItem from="1588758889433" duration="890000" />
       <workItem from="1588763381207" duration="88706000" />
-      <workItem from="1589202218745" duration="13279000" />
+      <workItem from="1589202218745" duration="29454000" />
+      <workItem from="1589444417654" duration="599000" />
+      <workItem from="1589461776312" duration="240000" />
+      <workItem from="1590564105906" duration="865000" />
+      <workItem from="1590579365608" duration="4760000" />
     </task>
     <task id="LOCAL-00001" summary="initddd">
       <created>1582819823380</created>
@@ -424,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588585416678</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add simulation and report output. 12th May">
+      <created>1589290054910</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589290054910</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +450,8 @@
     <MESSAGE value="function1: zone clone; function2: add windows and doors into each zone." />
     <MESSAGE value="buildings file added" />
     <MESSAGE value="Add Main.ipynb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Main.ipynb" />
+    <MESSAGE value="Add simulation and report output. 12th May" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add simulation and report output. 12th May" />
   </component>
   <component name="WindowStateProjectService">
     <state x="261" y="0" key="#Inspections" timestamp="1586419870075">
@@ -478,18 +470,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586510109787" />
-    <state x="326" y="0" key="CommitChangelistDialog2" timestamp="1589289893976">
+    <state x="436" y="103" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590564356418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="326" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589289893976" />
+    <state x="436" y="103" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1590564356418" />
+    <state x="326" y="0" key="CommitChangelistDialog2" timestamp="1589290051218">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="326" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589290051218" />
     <state width="623" height="546" key="DebuggerActiveHint" timestamp="1588580454035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="623" height="546" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1588580454035" />
-    <state x="675" y="112" key="FileChooserDialogImpl" timestamp="1586512348313">
+    <state x="675" y="112" key="FileChooserDialogImpl" timestamp="1590579383497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="675" y="112" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586512348313" />
+    <state x="675" y="112" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590579383497" />
     <state x="617" y="281" key="Github.ShareDialog" timestamp="1586512205754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -498,22 +494,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="55" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582819676149" />
-    <state width="1485" height="160" key="GridCell.Tab.0.bottom" timestamp="1589219550126">
+    <state width="1485" height="160" key="GridCell.Tab.0.bottom" timestamp="1589391629038">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589219550126" />
-    <state width="1485" height="160" key="GridCell.Tab.0.center" timestamp="1589219550126">
+    <state width="1485" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589391629038" />
+    <state width="1485" height="160" key="GridCell.Tab.0.center" timestamp="1589391629038">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589219550126" />
-    <state width="1485" height="160" key="GridCell.Tab.0.left" timestamp="1589219550126">
+    <state width="1485" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589391629038" />
+    <state width="1485" height="160" key="GridCell.Tab.0.left" timestamp="1589391629038">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589219550126" />
-    <state width="1485" height="160" key="GridCell.Tab.0.right" timestamp="1589219550126">
+    <state width="1485" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589391629038" />
+    <state width="1485" height="160" key="GridCell.Tab.0.right" timestamp="1589391629038">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589219550126" />
+    <state width="1485" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589391629038" />
     <state width="1485" height="248" key="GridCell.Tab.1.bottom" timestamp="1588694987134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -546,18 +542,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1588756674818" />
-    <state x="261" y="82" key="Vcs.Push.Dialog.v2" timestamp="1588585426009">
+    <state x="261" y="82" key="Vcs.Push.Dialog.v2" timestamp="1589290098130">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="82" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588585426009" />
+    <state x="261" y="82" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589290098130" />
     <state x="591" y="250" key="git4idea.rebase.GitRebaseDialog" timestamp="1586511465462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="591" y="250" key="git4idea.rebase.GitRebaseDialog/0.0.1536.824@0.0.1536.824" timestamp="1586511465462" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1586284558336">
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1589360558767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586284558336" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589360558767" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -579,6 +575,7 @@
     <SUITE FILE_PATH="coverage/untitled$winstrc.coverage" NAME="winstrc Coverage Results" MODIFIED="1588689649636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zonestructure" />
     <SUITE FILE_PATH="coverage/untitled$zonesFc__1_.coverage" NAME="zonesFc (1) Coverage Results" MODIFIED="1588346651841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$py1.coverage" NAME="main Coverage Results" MODIFIED="1582817407647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled$database.coverage" NAME="database Coverage Results" MODIFIED="1589365325367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$readhtml.coverage" NAME="readhtml Coverage Results" MODIFIED="1589136826138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$dd.coverage" NAME="dd Coverage Results" MODIFIED="1588158952276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$zonestrc__1_.coverage" NAME="zonestrc (1) Coverage Results" MODIFIED="1588583942183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zonestructure" />
