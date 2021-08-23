@@ -60,7 +60,7 @@ mypy-extensions==0.4.3
 mysqlclient==1.4.6
 nbconvert==5.6.1
 nbformat==5.0.5
-notebook==6.0.3
+notebook==6.4.1
 numpy==1.18.1
 opyplus==1.0.3
 pandas==1.0.1
